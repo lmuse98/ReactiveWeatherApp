@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		EDC76A7F282BF60700879101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76A7E282BF60700879101 /* AppDelegate.swift */; };
-		EDC76A81282BF60700879101 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76A80282BF60700879101 /* SceneDelegate.swift */; };
-		EDC76A83282BF60700879101 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76A82282BF60700879101 /* ViewController.swift */; };
-		EDC76A86282BF60700879101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC76A84282BF60700879101 /* Main.storyboard */; };
+		EDC76A83282BF60700879101 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76A82282BF60700879101 /* WeatherViewController.swift */; };
 		EDC76A88282BF60A00879101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC76A87282BF60A00879101 /* Assets.xcassets */; };
 		EDC76A8B282BF60A00879101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC76A89282BF60A00879101 /* LaunchScreen.storyboard */; };
+		EDC76A94282BF7DE00879101 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EDC76A93282BF7DE00879101 /* SnapKit */; };
+		EDC76A97282BF87700879101 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EDC76A96282BF87700879101 /* RxCocoa */; };
+		EDC76A99282BF87700879101 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = EDC76A98282BF87700879101 /* RxRelay */; };
+		EDC76A9B282BF87700879101 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDC76A9A282BF87700879101 /* RxSwift */; };
+		EDC76A9D282C01B700879101 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76A9C282C01B700879101 /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EDC76A7B282BF60700879101 /* ReactiveWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC76A7E282BF60700879101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDC76A80282BF60700879101 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDC76A82282BF60700879101 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EDC76A85282BF60700879101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDC76A82282BF60700879101 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		EDC76A87282BF60A00879101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDC76A8A282BF60A00879101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDC76A8C282BF60A00879101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDC76A9C282C01B700879101 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +33,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC76A99282BF87700879101 /* RxRelay in Frameworks */,
+				EDC76A97282BF87700879101 /* RxCocoa in Frameworks */,
+				EDC76A9B282BF87700879101 /* RxSwift in Frameworks */,
+				EDC76A94282BF7DE00879101 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EDC1BE21282C1E9D00E14850 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDC76A9C282C01B700879101 /* WeatherModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EDC1BE22282C1EA200E14850 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDC76A82282BF60700879101 /* WeatherViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDC1BE23282C1EAC00E14850 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		EDC76A72282BF60700879101 = {
 			isa = PBXGroup;
 			children = (
@@ -57,9 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				EDC76A7E282BF60700879101 /* AppDelegate.swift */,
-				EDC76A80282BF60700879101 /* SceneDelegate.swift */,
-				EDC76A82282BF60700879101 /* ViewController.swift */,
-				EDC76A84282BF60700879101 /* Main.storyboard */,
+				EDC1BE23282C1EAC00E14850 /* ViewModel */,
+				EDC1BE22282C1EA200E14850 /* View */,
+				EDC1BE21282C1E9D00E14850 /* Model */,
 				EDC76A87282BF60A00879101 /* Assets.xcassets */,
 				EDC76A89282BF60A00879101 /* LaunchScreen.storyboard */,
 				EDC76A8C282BF60A00879101 /* Info.plist */,
@@ -83,6 +112,12 @@
 			dependencies = (
 			);
 			name = ReactiveWeatherApp;
+			packageProductDependencies = (
+				EDC76A93282BF7DE00879101 /* SnapKit */,
+				EDC76A96282BF87700879101 /* RxCocoa */,
+				EDC76A98282BF87700879101 /* RxRelay */,
+				EDC76A9A282BF87700879101 /* RxSwift */,
+			);
 			productName = ReactiveWeatherApp;
 			productReference = EDC76A7B282BF60700879101 /* ReactiveWeatherApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +146,10 @@
 				Base,
 			);
 			mainGroup = EDC76A72282BF60700879101;
+			packageReferences = (
+				EDC76A92282BF7DE00879101 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EDC76A95282BF87700879101 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = EDC76A7C282BF60700879101 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +166,6 @@
 			files = (
 				EDC76A8B282BF60A00879101 /* LaunchScreen.storyboard in Resources */,
 				EDC76A88282BF60A00879101 /* Assets.xcassets in Resources */,
-				EDC76A86282BF60700879101 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +176,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDC76A83282BF60700879101 /* ViewController.swift in Sources */,
+				EDC76A83282BF60700879101 /* WeatherViewController.swift in Sources */,
+				EDC76A9D282C01B700879101 /* WeatherModel.swift in Sources */,
 				EDC76A7F282BF60700879101 /* AppDelegate.swift in Sources */,
-				EDC76A81282BF60700879101 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EDC76A84282BF60700879101 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EDC76A85282BF60700879101 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EDC76A89282BF60A00879101 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +324,6 @@
 				INFOPLIST_FILE = ReactiveWeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +351,6 @@
 				INFOPLIST_FILE = ReactiveWeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -360,6 +388,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDC76A92282BF7DE00879101 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		EDC76A95282BF87700879101 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDC76A93282BF7DE00879101 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDC76A92282BF7DE00879101 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		EDC76A96282BF87700879101 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDC76A95282BF87700879101 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		EDC76A98282BF87700879101 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDC76A95282BF87700879101 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		EDC76A9A282BF87700879101 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDC76A95282BF87700879101 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDC76A73282BF60700879101 /* Project object */;
 }
