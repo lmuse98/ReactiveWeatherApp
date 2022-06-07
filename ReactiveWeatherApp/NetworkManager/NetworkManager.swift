@@ -8,12 +8,23 @@
 import Foundation
 import RxSwift
 
-final class NetworkManager {
-    func load<T: Decodable>(resource: Resource<T>) -> Observable<T> {
+protocol NetworkingManager {
+    func load<T: Decodable>(resource: Resource, type: T.Type) -> Single<T>
+}
+
+final class NetworkManager: NetworkingManager {
+    
+    let netClient = NetworkClient()
+    
+    init() {
+        
+    }
+    
+    func load<T: Decodable>(resource: Resource, type: T.Type) -> Single<T> {
         if resource.parameter != nil {
-            return URL.loadWithPayLoad(resource: resource)
+            return netClient.load(resource: resource, response: type.self)
         } else {
-            return URL.load(resource: resource)
+            return .error(NetworkError.badURL)
         }
     }
 }

@@ -11,4 +11,5 @@ enum NetworkError: Error {
     case badURL
     case unknown
     case timeout
+    case badStatusCode
 }

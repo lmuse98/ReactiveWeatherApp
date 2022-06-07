@@ -10,46 +10,52 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-struct Resource<T> {
+struct Resource {
     let url: URL
     let parameter: [String: String]?
 }
 
-extension URL {
+class NetworkClient {
     
-    static func load<T: Decodable>(resource: Resource<T>) -> Observable<T> {
+     func load<T: Decodable>(resource: Resource, response: T.Type) -> Single<T> {
         return Observable.just(resource.url)
+             .debug("apiiiii",trimOutput: false)
             .flatMap { url -> Observable<(response: HTTPURLResponse, data: Data)> in
                 let request = URLRequest(url: url)
+                debugPrint(resource.url)
                 return URLSession.shared.rx.response(request: request)
             }.map { response, data -> T in
 
                 if 200 ..< 300 ~= response.statusCode {
                     return try JSONDecoder().decode(T.self, from: data)
                 } else {
-                    throw RxCocoaURLError.httpRequestFailed(response: response, data: data)
+                    throw NetworkError.badStatusCode
                 }
 
-            }.asObservable()
+            }.asSingle()
     }
 
-    static func loadWithPayLoad<T: Decodable>(resource: Resource<T>) -> Observable<T> {
+    func loadWithPayLoad<T: Decodable>(resource: Resource) -> Observable<T> {
         return Observable.just(resource.url)
-            .flatMap { url -> Observable<(response: HTTPURLResponse, data: Data)> in
-                let request = URLRequest(url: self.loadURL(resource: resource) ?? url)
-                return URLSession.shared.rx.response(request: request)
+            .flatMap { [weak self] url -> Observable<(response: HTTPURLResponse, data: Data)> in
+                
+                guard let self = self else { return .error(NetworkError.unknown)}
+                //let request = URLRequest(url: self.loadURL(resource: resource) ?? url)
+                //return URLSession.shared.rx.response(request: request)
+                
+                return .empty()
             }.map { response, data -> T in
-
+                
                 if 200 ..< 300 ~= response.statusCode {
                     return try JSONDecoder().decode(T.self, from: data)
                 } else {
-                    throw RxCocoaURLError.httpRequestFailed(response: response, data: data)
+                    throw NetworkError.badStatusCode
                 }
-
+                
             }.asObservable()
     }
-    
-    static func loadURL<T>(resource: Resource<T>) -> URL? {
+    /*
+    func loadURL<T>(resource: Resource) -> URL? {
         if
             let parameters = resource.parameter,
             let urlComponents = URLComponents(url: resource.url, resolvingAgainstBaseURL: false) {
@@ -63,4 +69,5 @@ extension URL {
         }
         return nil
     }
+     */
 }

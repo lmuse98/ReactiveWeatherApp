@@ -10,6 +10,17 @@ import SnapKit
 
 class WeatherViewController: UIViewController {
     
+    private let viewModel: WeatherViewModel
+    
+    init(viewModel: WeatherViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil , bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private var tempLabel: UILabel = {
         let temp = UILabel()
         temp.text = "0"
