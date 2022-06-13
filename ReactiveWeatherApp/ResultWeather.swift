@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+typealias ResultWeather = Result<Weather,Error>
