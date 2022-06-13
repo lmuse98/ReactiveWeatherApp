@@ -15,8 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
       
+<<<<<<< Updated upstream
 
         let viewController = WeatherViewController()
+=======
+        let client = NetworkClient()
+        let netManager = NetworkManager(client: client)
+        let weatherService = WeatherService(networkManager: netManager)
+        let viewController = WeatherViewController(viewModel: WeatherViewModel(weatherService: weatherService))
+>>>>>>> Stashed changes
         let navigationController = UINavigationController(rootViewController: viewController)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
