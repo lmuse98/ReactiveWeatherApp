@@ -11,7 +11,7 @@ struct Weather: Codable {
     let main: MainModel?
     let weather: [WeatherResult]?
     let sys: SysModel?
-    var name: String
+    var name: String?
     
 }
 

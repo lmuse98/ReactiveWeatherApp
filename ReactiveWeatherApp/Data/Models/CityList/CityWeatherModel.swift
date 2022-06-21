@@ -9,5 +9,5 @@ import Foundation
 
 struct CityWeatherModel: Codable {
     var cnt: Int?
-    var list: [WeatherResult]
+    var list: [Weather]
 }

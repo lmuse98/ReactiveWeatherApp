@@ -28,13 +28,6 @@ struct Api {
         return URL(string: Api.baseURL + "data/2.5/weather?appid=\(Api.apiKey)&q=\(city)&units=metric")
     }
     
-    func iconUrl(icon: URL) -> URL? {
-        return URL(string: Api.iconURL + "img/wn/\(icon)@2x.png")
-    }
-    
-    
-    var singleCityWeather: URL? { return URL(string: Api.baseURL + "data/2.5/weather?appid=\(Api.apiKey)&q=Split&units=metric" ) }
-    
     
     var groupWeatherId: URL? { return URL(string: Api.baseURL + "data/2.5/group") }
     

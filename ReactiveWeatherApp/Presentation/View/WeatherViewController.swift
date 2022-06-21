@@ -15,10 +15,22 @@ class WeatherViewController: UIViewController {
     init(viewModel: WeatherViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil , bundle: nil)
+        configureItems()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureItems() {
+        navigationController?.setCustomStyle()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showSearchBar))
+    }
+    
+    @objc func showSearchBar() {
+        let cityVC = CitySearchViewController()
+        navigationController?.present(UINavigationController(rootViewController: cityVC), animated: true)
     }
     
     private var tempLabel: UILabel = {
@@ -38,7 +50,8 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .cyan
+        navigationItem.title = "Home"
+        view.backgroundColor = .white
         setupViews()
         setupConstraints()
     }
@@ -60,6 +73,5 @@ class WeatherViewController: UIViewController {
             make.centerY.centerX.equalTo(view)
         }
     }
-
 }
 
