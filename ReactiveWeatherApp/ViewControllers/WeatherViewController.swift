@@ -18,9 +18,6 @@ class WeatherViewController: UIViewController {
         configureItems()
     }
     
-    let array: [String] = ["a","b","c","d"]
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
