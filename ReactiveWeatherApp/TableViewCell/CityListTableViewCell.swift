@@ -9,6 +9,10 @@ import UIKit
 
 class CityListTableViewCell: UITableViewCell {
     
+    struct Constant {
+        static let cellName = "CityListCell"
+    }
+    
     private lazy var backView: UIView = {
         let backView = UIView()
         return backView

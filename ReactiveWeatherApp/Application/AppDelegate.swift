@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let client = NetworkClient()
         let netManager = NetworkManager(client: client)
         let weatherService = WeatherService(networkManager: netManager)
-        let viewController = WeatherViewController(viewModel: WeatherViewModel(weatherService: weatherService))
+        let countryViewModel = CountryViewModel(countryUseCase: CountryUseCase(countryRepository: CountryRepository(fileManager: FileManager())), bookmarkedCitiesUseCase: BookmarkedCitiesUseCase(bookmarkedCitiesRepository: BookmarkedCitiesRepository(userDefaultsManager: UserDefaultsManager())))
+        let viewController = WeatherViewController(viewModel: WeatherViewModel(weatherService: weatherService, bookmarkedUseCase: BookmarkedCitiesUseCase(bookmarkedCitiesRepository: BookmarkedCitiesRepository(userDefaultsManager: UserDefaultsManager()))))
 
         let navigationController = UINavigationController(rootViewController: viewController)
         

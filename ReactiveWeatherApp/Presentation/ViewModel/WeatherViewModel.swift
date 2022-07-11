@@ -8,19 +8,27 @@
 import Foundation
 import RxSwift
 
+
 class WeatherViewModel {
     
     let disposeBag = DisposeBag()
     let weatherService: WeatherServiceProvider
+    private let bookmarkedUseCase: BookmarkedCitiesUseCase
+    
+    
+    
 
-    init(weatherService: WeatherServiceProvider) {
+    init(weatherService: WeatherServiceProvider, bookmarkedUseCase: BookmarkedCitiesUseCase) {
         self.weatherService = weatherService
+        self.bookmarkedUseCase = bookmarkedUseCase
         
         weatherService.getWeather(city: "London").subscribe({ value in
             print(value)
         }).disposed(by: disposeBag)
+        
+        let city = bookmarkedUseCase.getCity(key: "key", type: CityListModel.self)
+        print("čččččččč",city)
     
     }
-    
 }
 

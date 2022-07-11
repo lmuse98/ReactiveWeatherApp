@@ -16,22 +16,14 @@ class CitySearchTableViewCell: UITableViewCell {
     
     private lazy var cityLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
         return label
     }()
 
     private lazy var countryLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         return label
-    }()
-    
-    private lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.alignment = .leading
-        stackView.distribution = .fillEqually
-        return stackView
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -45,19 +37,18 @@ class CitySearchTableViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        addSubview(cityLabel)
-        addSubview(countryLabel)
-        stackView.addArrangedSubview(cityLabel)
-        stackView.addArrangedSubview(countryLabel)
+        contentView.addSubview(cityLabel)
+        contentView.addSubview(countryLabel)
     }
     
     private func setupConstraints() {
         cityLabel.snp.makeConstraints { make in
-            make.leading.equalTo(10)
-            make.top.equalTo(10)
+            make.leading.equalTo(14)
+            make.top.equalTo(11)
         }
-        stackView.snp.makeConstraints { make in
-            make.leading.equalTo(countryLabel.snp.trailing).offset(10)
+        countryLabel.snp.makeConstraints { make in
+            make.top.equalTo(cityLabel.snp.bottom).offset(11)
+            make.leading.equalTo(14)
         }
     }
     

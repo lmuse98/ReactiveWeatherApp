@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol WeatherRepositoryProvider {
-     
+    func getWeather(city: String) -> Single<ResultWeather>
 }

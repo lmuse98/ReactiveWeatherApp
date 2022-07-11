@@ -1,0 +1,82 @@
+[
+    {
+        "id": 3190176,
+        "name": "Sračinec",
+        "state": "",
+        "country": "HR",
+        "coord": {
+            "lon": 16.278891,
+            "lat": 46.329441
+        }
+    },
+    {
+        "id": 3190178,
+        "name": "Spuž",
+        "state": "",
+        "country": "ME",
+        "coord": {
+            "lon": 19.19417,
+            "lat": 42.5075
+        }
+    },
+    {
+        "id": 3190199,
+        "name": "Spodnji Duplek",
+        "state": "",
+        "country": "SI",
+        "coord": {
+            "lon": 15.74528,
+            "lat": 46.503059
+        }
+    },
+    {
+        "id": 3190219,
+        "name": "Spodnje Hoče",
+        "state": "",
+        "country": "SI",
+        "coord": {
+            "lon": 15.65,
+            "lat": 46.5
+        }
+    },
+    {
+        "id": 3190247,
+        "name": "Spodnja Idrija",
+        "state": "",
+        "country": "SI",
+        "coord": {
+            "lon": 14.02722,
+            "lat": 46.03194
+        }
+    },
+    {
+        "id": 3190249,
+        "name": "Spodnja Hajdina",
+        "state": "",
+        "country": "SI",
+        "coord": {
+            "lon": 15.84694,
+            "lat": 46.40889
+        }
+    },
+    {
+        "id": 3190253,
+        "name": "Spodnja Besnica",
+        "state": "",
+        "country": "SI",
+        "coord": {
+            "lon": 14.31667,
+            "lat": 46.26667
+        }
+    },
+    {
+        "id": 3190261,
+        "name": "Split",
+        "state": "",
+        "country": "HR",
+        "coord": {
+            "lon": 16.43915,
+            "lat": 43.508911
+        }
+    }
+]

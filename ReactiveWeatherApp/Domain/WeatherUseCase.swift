@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+final class WeatherUseCase  {
+    
+    private let weatherRepository: WeatherRepositoryProvider
+    
+    init(weatherRepository: WeatherRepositoryProvider) {
+        self.weatherRepository = weatherRepository
+    }
+    
+    
+}
